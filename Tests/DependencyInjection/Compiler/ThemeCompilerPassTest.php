@@ -27,13 +27,8 @@ class ThemeCompilerPassTest extends \PHPUnit_Framework_TestCase
             ->method('replaceArgument')
             ->with($this->equalTo(0), $this->equalTo(new Reference('liip_theme.file_locator')))
         ;
-        
-        //$kernel = $this->getKernelMock(array('a', 'b'), 'a');
-        
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\KernelInterface')
-            ->getMock();
 
-        $themeCompiler = new ThemeCompilerPass($kernel);
+        $themeCompiler = new ThemeCompilerPass();
         $themeCompiler->process($containerMock);
     }
 }

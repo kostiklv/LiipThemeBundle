@@ -17,16 +17,9 @@ use Liip\ThemeBundle\DependencyInjection\Compiler\ThemeCompilerPass;
 
 class LiipThemeBundle extends Bundle
 {
-    private $kernel;
-    
-    public function __construct($kernel)
-    {
-        $this->kernel = $kernel;
-    }
-    
     public function build(ContainerBuilder $container)
     {
         parent::build($container);
-        $container->addCompilerPass(new ThemeCompilerPass($this->kernel));
+        $container->addCompilerPass(new ThemeCompilerPass());
     }
 }
